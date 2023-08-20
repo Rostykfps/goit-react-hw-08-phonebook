@@ -103,7 +103,7 @@ export const EditContactForm = ({ onClose, contact }) => {
           </InputWrapper>
         </FormLabel>
 
-        <Button type="submit">Edit contact</Button>
+        <Button type="submit">Update contact</Button>
       </Form>
     </IconContext.Provider>
   );
