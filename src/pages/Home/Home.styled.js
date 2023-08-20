@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import imagePhonebook from '../../images/phone-book.png';
 
 export const Container = styled.div`
   margin: 40px auto;
