@@ -68,7 +68,7 @@ const ContactList = () => {
                     toggleShowModal();
                   }}
                 >
-                  Update
+                  Edit
                 </UpdateBtn>
                 <DeleteBtn
                   type="button"

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { addNewContact } from 'redux/contacts/contactsOperations';
@@ -124,6 +124,10 @@ const ContactForm = ({ onClose }) => {
       </Form>
     </IconContext.Provider>
   );
+};
+
+ContactForm.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

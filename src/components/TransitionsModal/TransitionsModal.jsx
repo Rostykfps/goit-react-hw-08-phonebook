@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -39,3 +40,8 @@ export default function TransitionsModal({ isShowModal, onClose, children }) {
     </div>
   );
 }
+
+TransitionsModal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.element.isRequired,
+};

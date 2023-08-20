@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 import { ModalWin, Overlay } from './ModalWindow.styled';
 
 export const ModalWindow = ({ onClose, children }) => {
@@ -27,4 +28,9 @@ export const ModalWindow = ({ onClose, children }) => {
     </Overlay>,
     document.querySelector('#modal-root')
   );
+};
+
+ModalWindow.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.element.isRequired,
 };

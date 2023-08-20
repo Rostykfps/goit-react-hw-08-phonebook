@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { BsPersonVcard } from 'react-icons/bs';
 import { TbPhone } from 'react-icons/tb';
@@ -102,8 +103,17 @@ export const EditContactForm = ({ onClose, contact }) => {
           </InputWrapper>
         </FormLabel>
 
-        <Button type="submit">Update contact</Button>
+        <Button type="submit">Edit contact</Button>
       </Form>
     </IconContext.Provider>
   );
+};
+
+EditContactForm.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
 };
