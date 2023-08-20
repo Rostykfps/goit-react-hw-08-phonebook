@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import {
   addNewContact,
+  editContact,
   fetchContacts,
   removeContact,
 } from './contactsOperations';
@@ -50,7 +51,17 @@ export const phoneBookSlice = createSlice({
         contacts.items.splice(index, 1);
         contacts.error = null;
       })
-      .addCase(removeContact.rejected, handleRejected);
+      .addCase(removeContact.rejected, handleRejected)
+      .addCase(editContact.pending, handlePending)
+      .addCase(editContact.fulfilled, ({ contacts }, { payload }) => {
+        contacts.isLoading = false;
+        const index = contacts.items.findIndex(
+          contact => contact.id === payload.id
+        );
+        contacts.items.splice(index, 1, payload);
+        contacts.error = null;
+      })
+      .addCase(editContact.rejected, handleRejected);
   },
 });
 

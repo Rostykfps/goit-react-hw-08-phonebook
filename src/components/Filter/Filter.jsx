@@ -1,25 +1,47 @@
-import { filterContacts } from 'components/redux/phoneBookSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { filterContacts } from 'redux/contacts/phoneBookSlice';
+import { useDispatch } from 'react-redux';
+import { PersonSearchOutlined } from '@mui/icons-material';
+import { AddContactBtn } from 'components/AddContactBtn/AddContactBtn';
+import { useContacts } from 'hooks';
 
-import { InputFilter, LabelFilter } from './Filter.styled';
+import {
+  Container,
+  InputFilter,
+  InputWrapper,
+  LabelFilter,
+} from './Filter.styled';
 
 const Filter = () => {
-  const filter = useSelector(state => state.phoneBook.filter);
+  const { filter } = useContacts();
 
   const dispatch = useDispatch();
 
   const filteredContacts = ({ target: { value } }) =>
     dispatch(filterContacts(value));
+
   return (
-    <LabelFilter>
-      Find contacts by name
-      <InputFilter
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={filteredContacts}
-      />
-    </LabelFilter>
+    <Container>
+      <LabelFilter>
+        Find contacts by name
+        <InputWrapper>
+          <InputFilter
+            type="text"
+            name="filter"
+            value={filter}
+            onChange={filteredContacts}
+          />
+          <PersonSearchOutlined
+            sx={{
+              color: '#0d6efd',
+              fontSize: 28,
+              position: 'absolute',
+              left: '5px',
+            }}
+          />
+        </InputWrapper>
+      </LabelFilter>
+      <AddContactBtn />
+    </Container>
   );
 };
 

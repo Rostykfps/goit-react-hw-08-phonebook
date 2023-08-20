@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
-export const IsLoading = styled.p`
-  margin-top: 15px;
-  margin-left: 30px;
+export const IsLoading = styled.div`
   text-align: center;
-  font-size: 22px;
-  font-weight: 600;
 `;
 
 export const ContactsList = styled.ul`
@@ -25,7 +21,7 @@ export const ContactsItem = styled.li`
   border-bottom: 1px solid #000000;
 `;
 
-export const DeleteBtn = styled.button`
+export const UpdateBtn = styled.button`
   margin-left: auto;
   background-color: #0d6efd;
   border: 1px solid #d2d2d2;
@@ -36,6 +32,25 @@ export const DeleteBtn = styled.button`
   font-weight: 600;
   outline: none;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: #0a58ca;
+  }
+`;
+
+export const DeleteBtn = styled.button`
+  margin-left: 10px;
+  background-color: #0d6efd;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     background-color: #0a58ca;

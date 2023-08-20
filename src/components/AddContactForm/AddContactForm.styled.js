@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import MaskedInput from 'react-text-mask';
+
+export const Title = styled.h3`
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+`;
 
 export const Form = styled.form`
   display: flex;
@@ -19,8 +26,19 @@ export const FormLabel = styled.label`
   font-weight: 500;
 `;
 
+export const InputWrapper = styled.div`
+  position: relative;
+`;
 export const FormInput = styled.input`
   width: 260px;
+  padding-left: 38px;
+  font-size: 22px;
+  border-radius: 3px;
+`;
+
+export const StyledInputMask = styled(MaskedInput)`
+  width: 260px;
+  padding-left: 38px;
   font-size: 22px;
   border-radius: 3px;
 `;

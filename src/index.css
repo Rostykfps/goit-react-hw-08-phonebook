@@ -59,5 +59,26 @@ ul {
   padding: 0;
 }
 
+a.active {
+  color:#d2d2d2
+}
 
+button.custom-button {
+font-size: 20px;
+min-width: auto;
+padding: 4px 12px;
+text-transform: none;
+ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+button.custom-button:hover,
+button.custom-button:focus {
+    background-color: #0a58ca;
+}
+
+.react-icon {
+  position: absolute;
+  font-size: 18px;
+  top:2px;
+  left: 7px;
+}
